@@ -1,5 +1,6 @@
 
 //#region /*Typing and deliting text*/ 
+
 let _CONTENT =["I'm the Web Developer you were looking for.","hola" ];
 
 let _PART = 0;
@@ -55,3 +56,19 @@ function Type() {
 // Start the typing effect on load
 _INTERVAL_VAL = setInterval(Type, 100);
 //#endregion
+
+//jQuery Smooth Scroll
+// $('.menu a').on('click', function(e){
+//     if (this.hash !== '') {
+//         e.preventDefault();
+
+//         const hash = this.hash;
+//         $('html, body').animate({
+//             scrollTop: $(hash).offset().top
+//         }, 800);
+//     }
+// });
+
+const scroll = new SmoothScroll('.menu a[href*="#"]',{
+    speed: 800
+});

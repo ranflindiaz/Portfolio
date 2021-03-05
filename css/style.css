@@ -1,6 +1,16 @@
+/*#region default*/
 @font-face{
     font-family:"league-gothic";
     src:url("../fonts/league-gothic.regular.ttf") format("woff");
+}
+body{
+    font-size: 16px;
+    font-family: sans-serif;
+    height: 100vh;
+}
+.main-container{
+    width: 100%;
+    height: 100%;
 }
 h3, h5{
     font-family: 'Poppins', sans-serif;
@@ -10,12 +20,16 @@ h3, h5{
     line-height: 1.5;
 }
 :root{
-    --link-color: rgb(12, 75, 211);
+    --link-color: #0c4bd3;
+    --link-color-hover: #ec4242;
     --bg-light-gray: #f9f9ff;
-    font-family: sans-serif;
 }
+/*#endregion default*/
+
+/*#region Header*/
 .header_area{
     position: fixed;
+    top: 0;
     width: 100%;
     background: #ffffff;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
@@ -37,8 +51,10 @@ h3, h5{
     align-items: center;
 }
 
-.header .logo{
+.header .logo img{
     margin-left: 10px;
+    width: 55px;
+    height: 55px;
 }
 .header .logo a{
     text-decoration: none;
@@ -69,9 +85,9 @@ h3, h5{
 .header .menu .menu-links:nth-last-child(1){
     margin-right: 10px;
 }
-.header .logo a:hover, .header .menu .menu-links li a:hover{
-    color:rgb(110, 101, 101);
-    transition: all 0.2s ease-in-out 0.2s;
+.header .menu .menu-links li a:hover{
+    color:var(--link-color-hover);
+    transition: all 0.3s ease-in;
 }
 
 /* .header .menu .menu-links li a:hover, 
@@ -97,9 +113,12 @@ a, :after, :before, .transition {
     transition: all .3s ease 0s;
 } */
 
-/***************** Hero-Container *****************/
+/*#endregion Header*/
 
-
+/*#region Hero-container*/
+section{
+    scroll-snap-align: center;
+}
 .hero-container{
     padding-top: 80px;
     width: 100%;
@@ -143,7 +162,7 @@ a, :after, :before, .transition {
     vertical-align: middle;
     width: 3px;
     height: 1.5rem;
-    background-color: var(--link-color);
+    background-color: var(--link-color-hover);
     animation: blink .9s step-end infinite;
 }
 
@@ -152,7 +171,7 @@ a, :after, :before, .transition {
         background-color: transparent;
     }
     50%{
-        background-color: var(--link-color);
+        background-color: var(--link-color-hover);
     }
 }
 
@@ -173,7 +192,9 @@ a, :after, :before, .transition {
     border-radius: 5px;
 }
 
-/***************** SKILLS *****************/
+/*#endregion Hero-container*/
+
+/*#region SKILLS*/
 #skills{
     padding: 60px 10px;
 }
@@ -262,9 +283,11 @@ flex-direction: column;
     top: -38px;
     right: 140px;
 }
+/*#endregion MY PROJECTS*/
 
-/***************** MY PROJECTS *****************/
+/*#region MY PROJECTS*/
 #projects{
+    padding-top: 10px;
     display: grid;
     background: var(--bg-light-gray);
     padding-bottom: 40px;
@@ -280,17 +303,13 @@ flex-direction: column;
     font-family: 'Poppins', sans-serif;
 }
 
-.projects__container{
-    
-}
-
 .my_projects{
     padding: 40px 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, minmax(300px, 1fr));
     grid-gap: 5px;
-    border: 1px solid blueviolet
+    border: 1px solid blueviolet;
 }
 .project_card{
     border: 1px solid orange;
@@ -298,3 +317,66 @@ flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+/*#endregion RegionName*/
+
+/*#region FOOTER*/
+.footer {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.logo img{
+    width: 55px;
+    height: 55px;
+}
+.footer__social .social-title{
+    font-size: 1.31rem; /*21px*/
+    color: #777777;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 50px;
+}
+.footer__social .icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container .footer__social-icon{
+    margin: 10px;
+    padding: 10px;
+}
+.icon-container .footer__social-icon > a{
+    text-decoration: none;
+    font-weight: 500;
+    color: #777777;
+    display: flex;
+    align-items: center;
+
+}
+.icon-container .footer__social-icon > a > i{
+    margin-left: 10px;
+    font-size: 2rem;
+}
+
+.icon-container .footer__social-icon > a:hover{
+    transition: all 0.3s ease-in-out;
+    color: var(--link-color-hover);
+}
+.icon-container .footer__social-icon > a > i:hover{
+    transition: all 0.3s ease-in-out;
+    color: var(--link-color);
+}
+
+
+.footer .copyright{
+    color: #777777;
+    font-size: 0.93rem; /*15px*/
+    line-height: 1.6rem;
+}
+.footer .copyright span{
+    color: var(--link-color-hover);
+}
+
+
+/*#endregion FOOTER*/
