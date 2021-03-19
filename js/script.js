@@ -1,7 +1,6 @@
+//#region /*Typing and deliting text*/
 
-//#region /*Typing and deliting text*/ 
-
-let _CONTENT =["I'm the Web Developer you were looking for.","hola" ];
+let _CONTENT = ["I'm the Web Developer you were looking for.", 'hola'];
 
 let _PART = 0;
 
@@ -13,21 +12,21 @@ const _TipingText = document.querySelector('#typing-text');
 const _Cursor = document.querySelector('#cursor');
 
 function Type() {
-    let text = _CONTENT[_PART].substring(0, _PART_INDEX + 1);
-    _TipingText.innerHTML = text;
-    _PART_INDEX++;
+	let text = _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+	_TipingText.innerHTML = text;
+	_PART_INDEX++;
 
-    if (text === _CONTENT[_PART]) {
-        _Cursor.style.display = 'none';
+	if (text === _CONTENT[_PART]) {
+		_Cursor.style.display = 'none';
 
-        clearInterval(_INTERNAL_VAL);
-        // setTimeout(function(){
-        //     _INTERNAL_VAL = setInterval(Delete, 50);
-        // }, 900);
-    }
+		clearInterval(_INTERNAL_VAL);
+		// setTimeout(function(){
+		//     _INTERNAL_VAL = setInterval(Delete, 50);
+		// }, 900);
+	}
 }
 
-// function Delete() {
+/* function Delete() {
 // 	// Get substring with 1 characater deleted
 // 	let text =  _CONTENT[_PART].substring(0, _PART_INDEX - 1);
 // 	_TipingText.innerHTML = text;
@@ -42,7 +41,7 @@ function Type() {
 // 			_PART = 0;
 // 		else
 // 			_PART++;
-		
+
 // 		_PART_INDEX = 0;
 
 // 		// Start to display the next sentence after some time
@@ -52,7 +51,7 @@ function Type() {
 // 		}, 200);
 // 	}
 // }
-
+ */
 // Start the typing effect on load
 _INTERVAL_VAL = setInterval(Type, 100);
 //#endregion
@@ -69,6 +68,6 @@ _INTERVAL_VAL = setInterval(Type, 100);
 //     }
 // });
 
-const scroll = new SmoothScroll('.menu a[href*="#"]',{
-    speed: 800
+const scroll = new SmoothScroll('.menu a[href*="#"]', {
+	speed: 800,
 });
